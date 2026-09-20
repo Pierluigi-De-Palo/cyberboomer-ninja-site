@@ -1,9 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cyber Boomer">
-  <!-- La faccia del sito in una scheda del browser: il fondo della voce e il
-       cursore che lampeggia. Chi ci trova un ninja, ci trova un ninja. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cyber Boomer" shape-rendering="crispEdges">
+  <!-- La B di Boomer in blocchi, dalla stessa mappa di bit del marchio (scripts/genera-wordmark.py),
+       e il punto blu che sul sito lampeggia. Chi ci trova un ninja, ci trova un ninja. -->
   <rect width="64" height="64" rx="12" fill="#0C0A0C"/>
-  <rect x="10" y="14" width="26" height="5" rx="2.5" fill="#EFE6EB"/>
-  <rect x="10" y="26" width="18" height="5" rx="2.5" fill="#A89DA4"/>
-  <rect x="10" y="38" width="22" height="5" rx="2.5" fill="#A89DA4"/>
-  <rect x="40" y="34" width="13" height="16" fill="#5C7CFF"/>
+  <rect x="12" y="8" width="7" height="7" fill="#EFE6EB"/><rect x="19" y="8" width="7" height="7" fill="#EFE6EB"/><rect x="26" y="8" width="7" height="7" fill="#EFE6EB"/><rect x="33" y="8" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="15" width="7" height="7" fill="#EFE6EB"/><rect x="40" y="15" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="22" width="7" height="7" fill="#EFE6EB"/><rect x="40" y="22" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="29" width="7" height="7" fill="#EFE6EB"/><rect x="19" y="29" width="7" height="7" fill="#EFE6EB"/><rect x="26" y="29" width="7" height="7" fill="#EFE6EB"/><rect x="33" y="29" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="36" width="7" height="7" fill="#EFE6EB"/><rect x="40" y="36" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="43" width="7" height="7" fill="#EFE6EB"/><rect x="40" y="43" width="7" height="7" fill="#EFE6EB"/><rect x="12" y="50" width="7" height="7" fill="#EFE6EB"/><rect x="19" y="50" width="7" height="7" fill="#EFE6EB"/><rect x="26" y="50" width="7" height="7" fill="#EFE6EB"/><rect x="33" y="50" width="7" height="7" fill="#EFE6EB"/><rect x="51" y="43" width="7" height="14" fill="#5C7CFF"/>
 </svg>
