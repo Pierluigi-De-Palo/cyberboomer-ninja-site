@@ -1,0 +1,61 @@
+{
+ "tipo": "lezione",
+ "id": "009",
+ "titolo": "Il negozio che sembrava vero",
+ "standfirst": "Le scarpe giuste, il logo giusto, il prezzo dimezzato. Ho pagato in tre minuti. Il negozio esisteva solo per quei tre minuti.",
+ "data": "2026-10-11",
+ "tag": [
+  "acquisti",
+  "truffe",
+  "siti"
+ ],
+ "provenienza": "casa",
+ "trappola": {
+  "prosa": [
+   "Cercavo un paio di scarpe di marca. Le ho trovate in un negozio online con le foto della marca, il logo della marca, i colori della marca. E il prezzo a metà.",
+   "In cima alla pagina c'era scritto che l'offerta finiva a mezzanotte. Erano le undici e mezza. Non ho controllato niente: ho pagato."
+  ],
+  "scena": {
+   "tipo": "banner",
+   "alt": "Ricostruzione di una pagina di offerta",
+   "da": "La pagina, alle 23:30",
+   "testo": "SCONTO 50% · SOLO OGGI\n\n      Mancano <strong>00:29:58</strong> alla fine dell'offerta.\n\n      <span class=\"falso\">— dopo il pagamento, il sito non ha più risposto —</span>"
+  },
+  "dopo": [
+   "Le scarpe non sono mai arrivate. Il negozio non rispondeva più alle mail. <em>Il sito, dopo qualche settimana, non c'era più.</em>",
+   "E io pensavo: ma era identico a quello vero. <strong>Appunto.</strong>"
+  ]
+ },
+ "davvero": {
+  "prosa": [
+   "La Polizia Postale lo descrive così: siti che <strong>imitano graficamente negozi online ufficiali o rivenditori autorizzati</strong>, con cataloghi di prodotti molto richiesti a prezzi più bassi del mercato.",
+   "Dopo il pagamento il venditore diventa irreperibile. Quando qualcosa arriva, spesso è un prodotto di scarso valore, diverso da quello comprato.",
+   "Il trucco non è la grafica: copiare un logo costa niente. Il trucco è <em>il tempo</em>. Il conto alla rovescia serve a una cosa sola: farti pagare prima che ti venga voglia di controllare."
+  ]
+ },
+ "mossa": {
+  "passi": [
+   {
+    "forte": "Leggi l'indirizzo, non la pagina.",
+    "testo": "La grafica si copia, l'indirizzo no. Guarda la barra in alto: <strong>è il sito della marca, o solo un nome che le somiglia?</strong> Se non sei sicuro, cerca la marca e entra dal suo sito ufficiale."
+   },
+   {
+    "forte": "Un prezzo dimezzato è una domanda, non un regalo.",
+    "testo": "Quando lo sconto è molto più grande di quello che trovi altrove, <em>chiediti chi ci guadagna</em>. Di solito la risposta è: chi ha fatto il sito."
+   },
+   {
+    "forte": "Se ti mettono fretta, rallenta.",
+    "testo": "Un'offerta che scade fra mezz'ora ti chiede di decidere senza guardare. <strong>Chiudi la pagina e riaprila domani</strong>: un negozio vero c'è ancora."
+   }
+  ]
+ },
+ "proverbio": {
+  "testo": "Il logo si copia in un minuto. Un negozio vero c'è ancora domani mattina."
+ },
+ "fonte": {
+  "titolo": "Polizia Postale — «Falsi siti di e-commerce e offerte ingannevoli online» (21/04/2026)",
+  "url": "https://www.commissariatodips.it/notizie/articolo/falsi-siti-di-e-commerce-e-offerte-ingannevoli-online/index.html",
+  "chi": "L'avviso ufficiale della Polizia Postale: come funzionano i siti che imitano i negozi veri, i segnali d'allarme e i consigli per comprare online.",
+  "chi_corto": "Polizia Postale"
+ }
+}
