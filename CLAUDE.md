@@ -94,7 +94,7 @@ solo chi è del mestiere, è sbagliata.
 
 ## Stati onesti
 
-- Il contatore dice **«000042 (contate a mano)»**. Resta così. Non si spiega in pagina.
+- ~~Il contatore dice **«000042 (contate a mano)»**. Resta così.~~ Tolto il 04/10 (JUDY, canone): un numero finto su una pagina vera. Torna solo se è un contatore vero.
 - **«Ottimizzato per Netscape 2077»** è la firma della casa: resta.
 - Quello che non c'è ancora si dichiara «in arrivo». Non si finge.
 
