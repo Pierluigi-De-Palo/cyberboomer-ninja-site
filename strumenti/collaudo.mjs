@@ -89,6 +89,8 @@ const CASA = {
     'https://support.google.com/', 'https://www.garanteprivacy.it/',
     'https://myactivity.google.com/', 'https://myadcenter.google.com/',
     'https://takeout.google.com/',
+    // i notebook del Direttore: cartelle di Drive condivise a chi ha il link (ECHO-17 = 2, 04/10)
+    'https://drive.google.com/',
   ],
 
   // Chi puo' SERVIRCI file da fuori — audio, immagini, PDF, fogli, script — cioe' tutto
@@ -97,6 +99,12 @@ const CASA = {
   // link su cui il lettore sceglie di cliccare: qui la pagina attinge senza chiedere.
   // Oggi VUOTO: gli ascolti avranno un host media, e si scrivera' qui prima.
   hostMediaAmmessi: [],
+
+  // I file di DATI che contengono solo link: la home li legge e ne fa <a href>, non carica
+  // niente da li'. I loro indirizzi si controllano come link (linkAmmessi), non come carico.
+  // Solo questi due, per nome: un JSON nuovo con indirizzi resta «carico» finche' non e' qui.
+  // — ECHO, 04/10 (strumenti.json e notebook.json, ECHO-17 e ECHO-19)
+  datiDiLink: ['notebook.json', 'strumenti.json'],
 
   // Indirizzi che compaiono ma non sono destinazioni: gli spazi dei nomi XML/SVG
   // (xmlns della grana e del favicon, lo schema della sitemap). Non vengono mai scaricati.
@@ -331,7 +339,9 @@ function statici() {
   let fuoriElenco = 0, nLink = 0, nCarico = 0, nTesto = 0;
   for (const p of tutte) {
     const t = readFileSync(p, 'utf8');
-    for (const { u, dove } of indirizzi(t, PAGINE.has(estensione(p)))) {
+    const soloLink = CASA.datiDiLink.includes(rel(p));
+    for (const { u, dove: d } of indirizzi(t, PAGINE.has(estensione(p)))) {
+      const dove = soloLink ? 'link' : d;
       if (u.startsWith('//')) { male(`indirizzo senza schema in ${rel(p)}`, `${u} — «//host» e' esterno e sfugge a tutto: qui non si scrive`); fuoriElenco++; continue; }
       if (diCasa(u)) continue;
       if (dove === 'link') {
