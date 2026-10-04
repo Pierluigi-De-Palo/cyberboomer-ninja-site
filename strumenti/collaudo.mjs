@@ -85,6 +85,7 @@ const CASA = {
   // quali host mancano).
   linkAmmessi: [
     'https://systema77.com/', 'https://anima.solar/',
+    'https://systema77.studio/',   // lo Studio (T4, 04/10)
     'https://www.commissariatodips.it/', 'https://about.fb.com/',
     'https://support.google.com/', 'https://www.garanteprivacy.it/',
     'https://myactivity.google.com/', 'https://myadcenter.google.com/',
@@ -98,13 +99,16 @@ const CASA = {
   // url(), @import, fetch, e qualunque URL dentro uno <script>). E' un'altra cosa da un
   // link su cui il lettore sceglie di cliccare: qui la pagina attinge senza chiedere.
   // Oggi VUOTO: gli ascolti avranno un host media, e si scrivera' qui prima.
-  hostMediaAmmessi: [],
+  hostMediaAmmessi: [
+    // la piazza (ECHO-20 = 1, ECHO-22 = 1, 04/10): il Worker di SQUELCH, solo JSON, niente cookie
+    'https://piazza-ninja.insieme.workers.dev/',
+  ],
 
   // I file di DATI che contengono solo link: la home li legge e ne fa <a href>, non carica
   // niente da li'. I loro indirizzi si controllano come link (linkAmmessi), non come carico.
-  // Solo questi due, per nome: un JSON nuovo con indirizzi resta «carico» finche' non e' qui.
-  // — ECHO, 04/10 (link-strumenti.json e notebook.json, ECHO-17 e ECHO-19)
-  datiDiLink: ['notebook.json', 'link-strumenti.json'],
+  // Solo questi, per nome: un JSON nuovo con indirizzi resta «carico» finche' non e' qui.
+  // — ECHO, 04/10 (notebook.json, ECHO-17)
+  datiDiLink: ['notebook.json'],
 
   // Indirizzi che compaiono ma non sono destinazioni: gli spazi dei nomi XML/SVG
   // (xmlns della grana e del favicon, lo schema della sitemap). Non vengono mai scaricati.

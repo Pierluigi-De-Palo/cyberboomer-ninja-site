@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La piazza — Cyber Boomer · cyberboomer.ninja</title>
+<meta name="description" content="La piazza di Cyber Boomer: scrivi quello che pensi, senza account e senza cookie. Proposte, idee, domande, e richieste di verdetto.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://cyberboomer.ninja/piazza/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="La piazza — Cyber Boomer">
+<meta property="og:description" content="Scrivi quello che pensi. Senza account, senza cookie.">
+<meta property="og:url" content="https://cyberboomer.ninja/piazza/">
+<meta property="og:image" content="https://cyberboomer.ninja/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/stile.css">
+<style>
+  /* La piazza (ECHO-20 = 1, 04/10): anonima, si pubblica subito, ECHO toglie dopo.
+     Stesso vestito a blocchi della home. Il server è di SQUELCH; qui solo la porta. — ECHO */
+  body{ line-height:1.6; }
+  .wrap{ max-width:760px; margin:0 auto; padding:0 1.5rem 4rem; }
+  .px-btn{
+    display:inline-block; font:inherit; font-family:var(--font-mono); font-weight:700; font-size:.72rem;
+    letter-spacing:.16em; text-transform:uppercase; text-decoration:none; color:var(--text-hi);
+    background:var(--bg-surface); border:2px solid var(--voice); padding:.6em 1em; cursor:pointer;
+    box-shadow:4px 4px 0 var(--line); transition:transform .12s steps(2), box-shadow .12s steps(2);
+  }
+  .px-btn:hover, .px-btn:focus-visible{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--line); }
+  .px-btn:active{ transform:translate(2px,2px); box-shadow:0 0 0 var(--line); }
+  .px-btn[aria-pressed="true"]{ background:var(--voice); color:var(--bg-deep); }
+  .px-btn[disabled]{ opacity:.5; cursor:wait; }
+  .px-btn[hidden]{ display:none; }
+  header{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1rem; padding:2.2rem 0 1.4rem; }
+  h1{ font-family:var(--font-mono); font-size:1.4rem; letter-spacing:.3em; color:var(--voice); }
+  .chiusa{ color:var(--voice); }
+  form[hidden]{ display:none; }
+  .regola{ font-family:var(--font-mono); font-size:.72rem; color:var(--text-lo); letter-spacing:.06em; margin-bottom:1.6rem; }
+  form, .filo, .vuoto{ background:var(--bg-surface); border:2px solid var(--line); box-shadow:4px 4px 0 var(--bg-deep); padding:1rem 1.1rem; }
+  form{ display:grid; gap:.7rem; margin-bottom:1.8rem; }
+  label{ font-family:var(--font-mono); font-size:.62rem; letter-spacing:.22em; text-transform:uppercase; color:var(--voice); }
+  input, textarea, select{
+    width:100%; font:inherit; color:var(--text-hi); background:var(--bg-deep);
+    border:2px solid var(--line); padding:.55em .7em;
+  }
+  input:focus, textarea:focus, select:focus{ outline:none; border-color:var(--voice); }
+  textarea{ min-height:7em; resize:vertical; }
+  .riga{ display:flex; flex-wrap:wrap; gap:.7rem; align-items:center; justify-content:space-between; }
+  .esito{ font-family:var(--font-mono); font-size:.72rem; color:var(--text-lo); }
+  .filtri{ display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:1.2rem; }
+  .filtri .px-btn{ font-size:.6rem; padding:.45em .8em; box-shadow:3px 3px 0 var(--line); }
+  .lista{ list-style:none; display:grid; gap:1rem; }
+  .filo .et{ font-family:var(--font-mono); font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--voice); }
+  .filo h2{ font-size:1.05rem; margin:.3rem 0 .4rem; }
+  .filo p{ white-space:pre-wrap; overflow-wrap:anywhere; color:var(--text-hi); }
+  .filo .piede{ display:flex; flex-wrap:wrap; gap:.8rem; margin-top:.8rem; font-family:var(--font-mono); font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; }
+  .filo .piede button{ font:inherit; color:var(--text-lo); background:none; border:0; cursor:pointer; text-decoration:underline; text-underline-offset:3px; letter-spacing:inherit; text-transform:inherit; }
+  .risposte{ list-style:none; margin-top:.9rem; border-left:2px solid var(--line); padding-left:.9rem; display:grid; gap:.6rem; }
+  .risposte p{ font-size:.95rem; }
+  .vuoto{ color:var(--text-lo); font-family:var(--font-mono); font-size:.8rem; }
+  .torna{ font-family:var(--font-mono); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--voice); text-decoration:none; }
+  footer{ text-align:center; font-family:var(--font-mono); font-size:.68rem; color:var(--text-lo); padding:2rem 1rem; letter-spacing:.12em; }
+  @media (prefers-reduced-motion: reduce){ .px-btn{ transition:none; } .px-btn:hover, .px-btn:focus-visible{ transform:none; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>LA PIAZZA</h1>
+    <a class="torna" href="/">← Ai bottoni</a>
+  </header>
+  <p class="regola">Qui si dice quello che si pensa. Niente account, niente cookie. Si toglie solo l'illegale e i dati delle persone.</p>
+  <p class="regola chiusa" id="chiusa">Oggi la piazza si legge soltanto: scrivere non è ancora acceso.</p>
+
+  <form id="scrivi" hidden>
+    <label for="cat">Di che si parla</label>
+    <select id="cat" name="categoria">
+      <option value="chiacchiera">Chiacchiera</option>
+      <option value="proposta">Proposta o idea</option>
+      <option value="verdetto">Chiedi un verdetto</option>
+    </select>
+    <label for="tit">Titolo</label>
+    <input id="tit" name="titolo" maxlength="120" required>
+    <label for="txt">Testo</label>
+    <textarea id="txt" name="testo" maxlength="2000" required></textarea>
+    <div class="riga">
+      <span class="esito" id="esito" role="status"></span>
+      <button class="px-btn" type="submit">▶ Pubblica</button>
+    </div>
+  </form>
+
+  <div class="filtri" role="group" aria-label="Filtra">
+    <button type="button" class="px-btn" data-cat="" aria-pressed="true">Tutto</button>
+    <button type="button" class="px-btn" data-cat="chiacchiera" aria-pressed="false">Chiacchiere</button>
+    <button type="button" class="px-btn" data-cat="proposta" aria-pressed="false">Proposte</button>
+    <button type="button" class="px-btn" data-cat="verdetto" aria-pressed="false">Verdetti</button>
+  </div>
+  <ul class="lista" id="lista"></ul>
+  <p class="vuoto" id="vuoto" hidden>Ancora nessuno ha parlato.</p>
+  <p style="text-align:center;margin-top:1.4rem"><button type="button" class="px-btn" id="altri" hidden>▼ Altri</button></p>
+</main>
+<footer>Niente cookie: me li mangio io · Nessun tracker a bordo</footer>
+
+<script>
+/* La porta della piazza. Il server (SQUELCH) risponde al contratto in
+   SQUELCH/DA-ECHO-2026-10-04-piazza-server.md. Ogni testo si mostra con textContent:
+   nessun HTML di chi scrive entra nella pagina. — ECHO, 04/10 */
+(function () {
+  var API = 'https://piazza-ninja.insieme.workers.dev/piazza';
+  // La scrittura si accende con la chiave del Direttore (ECHO-23): allora SCRIVERE = true.
+  // Fino ad allora la pagina dice il vero: si legge soltanto.
+  var SCRIVERE = false;
+  document.getElementById('scrivi').hidden = !SCRIVERE;
+  document.getElementById('chiusa').hidden = SCRIVERE;
+  var NOMI = { chiacchiera: 'Chiacchiera', proposta: 'Proposta', verdetto: 'Chiede un verdetto' };
+  var lista = document.getElementById('lista'), vuoto = document.getElementById('vuoto');
+  var esito = document.getElementById('esito'), filtro = '';
+
+  function chiama(metodo, via, corpo) {
+    return fetch(API + via, {
+      method: metodo, credentials: 'omit',
+      headers: corpo ? { 'Content-Type': 'application/json' } : {},
+      body: corpo ? JSON.stringify(corpo) : undefined
+    }).then(function (r) {
+      if (r.status === 429) { throw new Error('Piano: troppi messaggi insieme. Riprova fra un minuto.'); }
+      if (r.status === 503) { throw new Error('La piazza è chiusa alla scrittura per un momento. Leggere si può.'); }
+      if (r.status === 204) { return {}; }
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (!r.ok) { throw new Error(d.errore || ('La piazza non risponde (' + r.status + ').')); }
+        return d;
+      });
+    });
+  }
+  function quando(t) { return new Date(t * 1000).toLocaleString('it-IT', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }); }
+  function el(tag, cls, testo) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (testo != null) { e.textContent = testo; } return e; }
+
+  function segnala(id) {
+    var perche = prompt('Perché va tolto? (illegale, dati di una persona, spam)');
+    if (!perche) { return; }
+    chiama('POST', '/segnala', { id: id, perche: perche.slice(0, 500) })
+      .then(function () { esito.textContent = 'Segnalato. Lo guardo entro 24 ore.'; })
+      .catch(function (e) { esito.textContent = e.message; });
+  }
+
+  function filo(f) {
+    var li = el('li'), box = el('article', 'filo');
+    box.appendChild(el('span', 'et', (NOMI[f.categoria] || f.categoria) + ' · ' + quando(f.quando)));
+    box.appendChild(el('h2', '', f.titolo));
+    box.appendChild(el('p', '', f.testo));
+    var piede = el('div', 'piede');
+    var apri = el('button', '', 'Risposte (' + (f.risposte || 0) + ')');
+    var seg = el('button', '', 'Segnala'); seg.hidden = !SCRIVERE;
+    seg.addEventListener('click', function () { segnala(f.id); });
+    apri.addEventListener('click', function () { risposte(f.id, box, apri); });
+    piede.appendChild(apri); piede.appendChild(seg); box.appendChild(piede);
+    li.appendChild(box);
+    return li;
+  }
+
+  function risposte(id, box, bottone) {
+    bottone.disabled = true;
+    chiama('GET', '/filo/' + encodeURIComponent(id)).then(function (d) {
+      var ul = el('ul', 'risposte');
+      (d.risposte || []).forEach(function (r) {
+        var li = el('li'); li.appendChild(el('span', 'et', quando(r.quando))); li.appendChild(el('p', '', r.testo)); ul.appendChild(li);
+      });
+      var f = el('form'); f.style.marginTop = '.8rem';
+      var t = el('textarea'); t.maxLength = 2000; t.required = true; t.setAttribute('aria-label', 'La tua risposta');
+      var b = el('button', 'px-btn', '▶ Rispondi'); b.type = 'submit';
+      f.appendChild(t); f.appendChild(b);
+      f.addEventListener('submit', function (ev) {
+        ev.preventDefault(); b.disabled = true;
+        chiama('POST', '/filo/' + encodeURIComponent(id) + '/risposta', { testo: t.value.trim() })
+          .then(function () { box.removeChild(ul); box.removeChild(f); bottone.disabled = false; risposte(id, box, bottone); })
+          .catch(function (e) { esito.textContent = e.message; b.disabled = false; });
+      });
+      box.appendChild(ul); if (SCRIVERE) { box.appendChild(f); }
+    }).catch(function (e) { esito.textContent = e.message; bottone.disabled = false; });
+  }
+
+  var altri = document.getElementById('altri'), cursore = null;
+  function carica(avanti) {
+    var via = '/fili' + (avanti && cursore ? '?da=' + encodeURIComponent(cursore) : '');
+    chiama('GET', via).then(function (d) {
+      if (!avanti) { lista.textContent = ''; }
+      var fili = (d.fili || []).filter(function (f) { return !filtro || f.categoria === filtro; });
+      fili.forEach(function (f) { lista.appendChild(filo(f)); });
+      cursore = d.dopo || null;
+      altri.hidden = !cursore;
+      vuoto.hidden = lista.children.length > 0;
+    }).catch(function (e) { esito.textContent = e.message; });
+  }
+  altri.addEventListener('click', function () { carica(true); });
+
+  document.getElementById('scrivi').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var f = ev.target, b = f.querySelector('button');
+    b.disabled = true; esito.textContent = '';
+    chiama('POST', '/filo', { categoria: f.categoria.value, titolo: f.titolo.value.trim(), testo: f.testo.value.trim() })
+      .then(function () { f.reset(); esito.textContent = 'Pubblicato.'; carica(); })
+      .catch(function (e) { esito.textContent = e.message; })
+      .then(function () { b.disabled = false; });
+  });
+  [].slice.call(document.querySelectorAll('[data-cat]')).forEach(function (b) {
+    b.addEventListener('click', function () {
+      filtro = b.getAttribute('data-cat');
+      [].slice.call(document.querySelectorAll('[data-cat]')).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      carica();
+    });
+  });
+  carica();
+})();
+</script>
+</body>
+</html>
+<!-- — creato da ECHO, 2026-10-04 -->
