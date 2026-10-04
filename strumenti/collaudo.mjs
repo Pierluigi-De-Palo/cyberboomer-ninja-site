@@ -103,8 +103,8 @@ const CASA = {
   // I file di DATI che contengono solo link: la home li legge e ne fa <a href>, non carica
   // niente da li'. I loro indirizzi si controllano come link (linkAmmessi), non come carico.
   // Solo questi due, per nome: un JSON nuovo con indirizzi resta «carico» finche' non e' qui.
-  // — ECHO, 04/10 (strumenti.json e notebook.json, ECHO-17 e ECHO-19)
-  datiDiLink: ['notebook.json', 'strumenti.json'],
+  // — ECHO, 04/10 (link-strumenti.json e notebook.json, ECHO-17 e ECHO-19)
+  datiDiLink: ['notebook.json', 'link-strumenti.json'],
 
   // Indirizzi che compaiono ma non sono destinazioni: gli spazi dei nomi XML/SVG
   // (xmlns della grana e del favicon, lo schema della sitemap). Non vengono mai scaricati.

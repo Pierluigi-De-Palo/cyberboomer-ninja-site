@@ -181,7 +181,7 @@
 <script>
 /* La griglia si riempie da due file della casa, stessa origine, niente terzi:
    /archivio.json (le schede, lo genera genera-tutto.py), /notebook.json (i notebook,
-   uno per riga) e /strumenti.json (gli strumenti gratis della casa, ECHO-19 = 1). Una carta esce solo quando è vera: un notebook senza link non si
+   uno per riga) e /link-strumenti.json (gli strumenti gratis della casa, ECHO-19 = 1). Una carta esce solo quando è vera: un notebook senza link non si
    mostra, e i corsi tornano con una data (JUDY, 04/10: zero «in arrivo»). — ECHO, 04/10 */
 (function () {
   var griglia = document.getElementById('griglia');
@@ -207,7 +207,7 @@
     return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   }
 
-  Promise.all([leggi('/archivio.json'), leggi('/notebook.json'), leggi('/strumenti.json')]).then(function (dati) {
+  Promise.all([leggi('/archivio.json'), leggi('/notebook.json'), leggi('/link-strumenti.json')]).then(function (dati) {
     var schede = dati[0].slice().sort(function (a, b) { return a.id < b.id ? 1 : -1; });
     var notebook = dati[1];
     var strumenti = dati[2];
