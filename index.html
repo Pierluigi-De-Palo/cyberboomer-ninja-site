@@ -40,6 +40,7 @@
   .px-btn:hover, .px-btn:focus-visible{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--line); background:var(--voice-soft); }
   .px-btn:active{ transform:translate(2px,2px); box-shadow:0 0 0 var(--line); }
   .px-btn[aria-pressed="true"]{ background:var(--voice); color:var(--bg-deep); }
+  .px-btn[hidden]{ display:none; }
 
   /* ── IN CIMA ── */
   .cima{ text-align:center; padding:3.2rem 1.5rem 1.6rem; }
@@ -121,6 +122,7 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ico-lezione" viewBox="0 0 16 12"><rect x="4" y="0" width="6" height="1" fill="#5C7CFF"/><rect x="3" y="1" width="1" height="1" fill="#5C7CFF"/><rect x="10" y="1" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="2" width="1" height="1" fill="#5C7CFF"/><rect x="6" y="2" width="2" height="1" fill="#EFE6EB"/><rect x="10" y="2" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="3" width="1" height="1" fill="#5C7CFF"/><rect x="6" y="3" width="2" height="1" fill="#EFE6EB"/><rect x="10" y="3" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="4" width="1" height="1" fill="#5C7CFF"/><rect x="6" y="4" width="2" height="1" fill="#EFE6EB"/><rect x="10" y="4" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="5" width="1" height="1" fill="#5C7CFF"/><rect x="6" y="5" width="2" height="1" fill="#EFE6EB"/><rect x="10" y="5" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="6" width="1" height="1" fill="#5C7CFF"/><rect x="10" y="6" width="1" height="1" fill="#5C7CFF"/><rect x="3" y="7" width="1" height="1" fill="#5C7CFF"/><rect x="6" y="7" width="2" height="1" fill="#EFE6EB"/><rect x="10" y="7" width="1" height="1" fill="#5C7CFF"/><rect x="4" y="8" width="6" height="1" fill="#5C7CFF"/><rect x="0" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="4" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="6" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="8" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="10" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="12" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="14" y="10" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="11" width="16" height="1" fill="#EFE6EB"/></symbol>
   <symbol id="ico-notebook" viewBox="0 0 16 11"><rect x="2" y="0" width="10" height="1" fill="#EFE6EB"/><rect x="1" y="1" width="1" height="1" fill="#5C7CFF"/><rect x="2" y="1" width="1" height="1" fill="#EFE6EB"/><rect x="3" y="1" width="8" height="1" fill="#A89DA4"/><rect x="11" y="1" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="2" width="10" height="1" fill="#EFE6EB"/><rect x="1" y="3" width="1" height="1" fill="#5C7CFF"/><rect x="2" y="3" width="1" height="1" fill="#EFE6EB"/><rect x="11" y="3" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="4" width="1" height="1" fill="#EFE6EB"/><rect x="4" y="4" width="5" height="1" fill="#5C7CFF"/><rect x="11" y="4" width="1" height="1" fill="#EFE6EB"/><rect x="1" y="5" width="1" height="1" fill="#5C7CFF"/><rect x="2" y="5" width="1" height="1" fill="#EFE6EB"/><rect x="11" y="5" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="6" width="1" height="1" fill="#EFE6EB"/><rect x="4" y="6" width="6" height="1" fill="#5C7CFF"/><rect x="11" y="6" width="1" height="1" fill="#EFE6EB"/><rect x="1" y="7" width="1" height="1" fill="#5C7CFF"/><rect x="2" y="7" width="1" height="1" fill="#EFE6EB"/><rect x="11" y="7" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="8" width="1" height="1" fill="#EFE6EB"/><rect x="4" y="8" width="4" height="1" fill="#5C7CFF"/><rect x="11" y="8" width="1" height="1" fill="#EFE6EB"/><rect x="1" y="9" width="1" height="1" fill="#5C7CFF"/><rect x="2" y="9" width="1" height="1" fill="#EFE6EB"/><rect x="11" y="9" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="10" width="10" height="1" fill="#EFE6EB"/></symbol>
+  <symbol id="ico-strumento" viewBox="0 0 16 11"><rect x="11" y="0" width="1" height="1" fill="#5C7CFF"/><rect x="10" y="1" width="1" height="1" fill="#5C7CFF"/><rect x="9" y="2" width="1" height="1" fill="#5C7CFF"/><rect x="0" y="3" width="15" height="1" fill="#EFE6EB"/><rect x="0" y="4" width="1" height="1" fill="#EFE6EB"/><rect x="15" y="4" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="5" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="5" width="3" height="1" fill="#5C7CFF"/><rect x="7" y="5" width="6" height="1" fill="#EFE6EB"/><rect x="15" y="5" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="6" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="6" width="3" height="1" fill="#5C7CFF"/><rect x="15" y="6" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="7" width="1" height="1" fill="#EFE6EB"/><rect x="2" y="7" width="3" height="1" fill="#5C7CFF"/><rect x="7" y="7" width="6" height="1" fill="#EFE6EB"/><rect x="15" y="7" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="8" width="1" height="1" fill="#EFE6EB"/><rect x="15" y="8" width="1" height="1" fill="#EFE6EB"/><rect x="0" y="9" width="16" height="1" fill="#EFE6EB"/><rect x="1" y="10" width="2" height="1" fill="#EFE6EB"/><rect x="13" y="10" width="2" height="1" fill="#EFE6EB"/></symbol>
 </svg>
 
 <header class="cima">
@@ -147,6 +149,7 @@
         <button type="button" class="px-btn" data-filtro="tutto" aria-pressed="true">Tutto</button>
         <button type="button" class="px-btn" data-filtro="lezione" aria-pressed="false">Lezioni</button>
         <button type="button" class="px-btn" data-filtro="notebook" aria-pressed="false">Notebook</button>
+        <button type="button" class="px-btn" data-filtro="strumento" aria-pressed="false">Strumenti</button>
       </div>
     </div>
     <ul class="griglia" id="griglia">
@@ -177,8 +180,8 @@
 
 <script>
 /* La griglia si riempie da due file della casa, stessa origine, niente terzi:
-   /archivio.json (le schede, lo genera genera-tutto.py) e /notebook.json (i notebook,
-   uno per riga). Una carta esce solo quando è vera: un notebook senza link non si
+   /archivio.json (le schede, lo genera genera-tutto.py), /notebook.json (i notebook,
+   uno per riga) e /strumenti.json (gli strumenti gratis della casa, ECHO-19 = 1). Una carta esce solo quando è vera: un notebook senza link non si
    mostra, e i corsi tornano con una data (JUDY, 04/10: zero «in arrivo»). — ECHO, 04/10 */
 (function () {
   var griglia = document.getElementById('griglia');
@@ -191,7 +194,7 @@
     c.setAttribute('data-tipo', tipo);
     c.href = href;
     if (/^https?:/.test(href)) { c.rel = 'noopener'; }
-    c.innerHTML = '<svg class="px" viewBox="' + (ico === 'notebook' ? '0 0 16 11' : '0 0 16 12') +
+    c.innerHTML = '<svg class="px" viewBox="' + (ico === 'lezione' ? '0 0 16 12' : '0 0 16 11') +
       '" aria-hidden="true"><use href="#ico-' + ico + '"/></svg><span class="et"></span><span class="t"></span><span class="va"></span>';
     c.querySelector('.et').textContent = et;
     c.querySelector('.t').textContent = titolo;
@@ -204,13 +207,15 @@
     return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   }
 
-  Promise.all([leggi('/archivio.json'), leggi('/notebook.json')]).then(function (dati) {
+  Promise.all([leggi('/archivio.json'), leggi('/notebook.json'), leggi('/strumenti.json')]).then(function (dati) {
     var schede = dati[0].slice().sort(function (a, b) { return a.id < b.id ? 1 : -1; });
     var notebook = dati[1];
+    var strumenti = dati[2];
     var pezzi = document.createDocumentFragment();
     schede.forEach(function (s) {
       pezzi.appendChild(carta(s.tipo, 'lezione', (ETICHETTA[s.tipo] || s.tipo) + ' ' + s.id, s.titolo, s.url));
     });
+    strumenti.forEach(function (s) { pezzi.appendChild(carta('strumento', 'strumento', s.et, s.titolo, s.url)); });
     notebook.filter(function (n) { return n.url; }).forEach(function (n) {
       pezzi.appendChild(carta('notebook', 'notebook', 'Notebook · ' + n.tema, n.titolo, n.url));
     });
@@ -230,7 +235,7 @@
     bottoni.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filtro') === f)); });
     [].slice.call(griglia.querySelectorAll('.carta')).forEach(function (c) {
       var tipo = c.getAttribute('data-tipo');
-      var vedi = f === 'tutto' || tipo === f || (f === 'lezione' && tipo !== 'notebook');
+      var vedi = f === 'tutto' || tipo === f || (f === 'lezione' && tipo !== 'notebook' && tipo !== 'strumento');
       c.parentNode.hidden = !vedi;
     });
   }
