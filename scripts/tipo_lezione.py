@@ -65,6 +65,7 @@ __BATTUTE__
   </div>
 
   <p class="share">✳ Portalo in giro: __SHARE__</p>
+  <p class="share">✳ Lo vuoi spiegare alla tua squadra? <a href="https://systema77.com/formazione.html" rel="noopener" target="_blank">La formazione di SYSTEMA 77</a>.</p>
 
 </div>
 
